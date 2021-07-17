@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="meditation, relax, do nothing, breathe">
+    <meta name="title" content="relax">
+    <meta name="description" content="allows you to feel the time in the chaos of the day">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+    <title>Relax</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital@1&display=swap" rel="stylesheet">
+
+<style>
+
+html {
+  height: 100%;
+}
+   
+body{ 
+  
+  background-image: url("palebd.jpg");
+  height: 100%; 
+  background-position: center;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+h1 {
+
+
+font-family: 'Raleway', sans-serif;
+}
+p{
+font-family: 'Raleway', sans-serif;
+color: #eeee;
+}
+
+h2{
+font-family: 'Raleway', sans-serif;
+color: #eeee;
+
+}
+
+
+div{
+
+    margin-top: 10%;
+background-color:rgba(238,238,238, 0.5);
+width: 50%;
+border-radius: 25px;
+}
+
+</style>
+</head>
+<body>
+<center>
+    <div>
+    <h1>allow you to feel the time in the chaos of the day</h1>
+    </div>
+
+<p>Look at that pale blue dot, you are there.<br>
+    All your fears, troubles, worries...
+</p>
+
+
+<h2 class="time">2:00</h2>
+
+
+</center>
+</body>
+
+<script>
+countdown();
+
+var interval;
+function countdown() {
+  clearInterval(interval);
+  interval = setInterval( function() {
+      var timer = $('.time').html();
+      timer = timer.split(':');
+      var minutes = timer[0];
+      var seconds = timer[1];
+      seconds -= 1;
+      if (minutes < 0) return;
+      else if (seconds < 0 && minutes != 0) {
+          minutes -= 1;
+          seconds = 59;
+      }
+      else if (seconds < 10 && length.seconds != 2) seconds = '0' + seconds;
+
+      $('.time').html(minutes + ':' + seconds);
+
+      if (minutes == 0 && seconds == 0) clearInterval(interval);
+  }, 1000);
+}
+
+</script>
+
+</html>
